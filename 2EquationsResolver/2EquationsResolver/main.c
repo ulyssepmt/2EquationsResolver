@@ -3,7 +3,7 @@
 
 #define _CRT_SECURE_NO_WARNINGS
 
-void ChangeTextColor(int c) { // méthode pour changer la couleur du texte au moment voulu dans la méthode résolution
+void ChangeTextColor(int c) { // mÃ©thode pour changer la couleur du texte au moment voulu dans la mÃ©thode rÃ©solution
 
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), c);
 }
@@ -20,7 +20,7 @@ float CheckUserInput(const char* demandeUser) {
 		if (validInput != 1) {
 			ChangeTextColor(12);
 			printf("[ERREUR] Pas un reel !\n\n");
-			while (getchar() != '\n');  // Clear the input buffer
+			while (getchar() != '\n'); 
 		}
 	} while (validInput != 1);
 
@@ -30,10 +30,10 @@ float CheckUserInput(const char* demandeUser) {
 void SystemResolution() {
 
 	HWND hwnd = GetConsoleWindow(); // handle de la console
-	SetConsoleTitleA("Solveur de systemes d equations"); //évident 
-	MoveWindow(hwnd, 0, 0, 700, 400, TRUE); // modification de la taille de la fenêtre 
+	SetConsoleTitleA("Solveur de systemes d equations"); //Ã©vident 
+	MoveWindow(hwnd, 0, 0, 700, 400, TRUE); // modification de la taille de la fenÃªtre 
 
-	ChangeTextColor(11); // couleur du texte qui change selon le paramètre d'entrée choisit
+	ChangeTextColor(11); // couleur du texte qui change selon le paramÃ¨tre d'entrÃ©e choisit
 
 	printf("Comment l utiliser ?\nSaisissez vos coefficients en suivant ce schema : \n\n| ax + by = c\n| a'x + b'y = c'\n\n"); 
 	float a = 0, b = 0, c = 0, a2 = 0, b2 = 0, c2 = 0, ta = 0, ta2 = 0, tb = 0, tb2 = 0, tc = 0, tc2 = 0, s1 = 0, s2 = 0, s3 = 0, y = 0, e = 0, x = 0;
@@ -60,7 +60,7 @@ nouv_equa:
 	ChangeTextColor(10);
 
 	printf("\nSysteme d equation :\n\n"); 
-	// Affichage du système d'équation avec qqs conditions : si b ou b2 sont positifs, on affiche un "+" devant le terme
+	// Affichage du systÃ¨me d'Ã©quation avec qqs conditions : si b ou b2 sont positifs, on affiche un "+" devant le terme
 	if (b > 0) { printf("| %f x + %f y = %f\n", a, b, c); 
 	}
 	else { 
@@ -74,7 +74,7 @@ nouv_equa:
 	else { printf("| %f x %f y = %f\n\n", a2, b2, c2); 
 	}
 	//if (c > 0) c* (-1); 
-	// combinaisons linéaires simplement : 
+	// combinaisons linÃ©aires simplement : 
 
 	ta = a * a2; tb = b * a2; tc = c * a2;
 
